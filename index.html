@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>S.K. Traders – NAMO Gold Genuine Parts | Jaipur</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:wght@400;600;700;800&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+/* ═══ THEMES ═══ */
+:root{
+  --red:#C8011A;--dred:#9B0014;--rl:rgba(200,1,26,.09);
+  --bg:#F7F4EF;--bg2:#EEECE6;
+  --panel:#FFF;--border:#E0DAD0;--border2:#C8C0B4;
+  --text:#1A1A1A;--t2:#555;--t3:#999;
+  --gold:#B8900E;--gl:#FFFAE8;
+  --sh:rgba(0,0,0,.07);--sh2:rgba(0,0,0,.14);
+  --nb:rgba(255,255,255,.97);--mb:#fff;
+  --ph:linear-gradient(135deg,#111 0%,#280808 100%);
+}
+[data-theme=dark]{
+  --bg:#0E0E0E;--bg2:#161616;
+  --panel:#1C1C1C;--border:#2C2C2C;--border2:#3C3C3C;
+  --text:#F0EDE8;--t2:#AAAAAA;--t3:#666;
+  --gold:#C8A84B;--gl:#1A1400;--rl:rgba(200,1,26,.15);
+  --sh:rgba(0,0,0,.35);--sh2:rgba(0,0,0,.55);
+  --nb:rgba(14,14,14,.97);--mb:#1c1c1c;
+  --ph:linear-gradient(135deg,#080808 0%,#1e0505 100%);
+}
+*,*::before,*::after{transition:background-color .22s,border-color .22s,color .15s,box-shadow .22s}
+svg *{transition:none!important}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:'Barlow',sans-serif;overflow-x:hidden;-webkit-text-size-adjust:100%}
+.page{display:none;min-height:100vh;padding-top:68px}
+.page.active{display:block}
+
+/* ═══ NAV ═══ */
+nav{position:fixed;top:0;left:0;right:0;z-index:300;height:68px;background:var(--nb);border-bottom:3px solid var(--red);display:flex;align-items:center;justify-content:space-between;padding:0 5%;box-shadow:0 2px 20px var(--sh);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
+.nlogo{display:flex;align-items:center;gap:11px;cursor:pointer;flex-shrink:0}
+.nico{width:40px;height:40px;background:var(--red);display:flex;align-items:center;justify-content:center;clip-path:polygon(8% 0%,92% 0%,100% 8%,100% 92%,92% 100%,8% 100%,0% 92%,0% 8%);flex-shrink:0}
+.nico span{font-family:'Bebas Neue',sans-serif;font-size:16px;color:#fff;letter-spacing:1px}
+.nbrand strong{display:block;font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:14px;color:var(--text);letter-spacing:2px;text-transform:uppercase;line-height:1.2}
+.nbrand small{font-size:9px;color:var(--gold);letter-spacing:2px;text-transform:uppercase}
+.nlinks{display:flex;list-style:none;align-items:center}
+.nlinks li a{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:12px;letter-spacing:2px;text-transform:uppercase;color:var(--t2);text-decoration:none;padding:8px 10px;display:block;position:relative;cursor:pointer;transition:color .2s;white-space:nowrap}
+.nlinks li a::after{content:'';position:absolute;bottom:0;left:10px;right:10px;height:3px;background:var(--red);transform:scaleX(0);transition:transform .2s}
+.nlinks li a:hover,.nlinks li a.act{color:var(--red)}
+.nlinks li a:hover::after,.nlinks li a.act::after{transform:scaleX(1)}
+.ncta{background:var(--red)!important;color:#fff!important;clip-path:polygon(6px 0%,100% 0%,calc(100% - 6px) 100%,0% 100%);margin-left:5px!important}
+.ncta:hover{background:var(--dred)!important}
+.ncta::after{display:none!important}
+.nctrl{display:flex;align-items:center;gap:6px;flex-shrink:0}
+.tbtn{width:34px;height:34px;background:var(--bg2);border:1px solid var(--border);border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:15px;flex-shrink:0;-webkit-tap-highlight-color:transparent}
+.tbtn:hover{border-color:var(--red)}
+.ham{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:6px;flex-shrink:0;-webkit-tap-highlight-color:transparent}
+.ham span{width:22px;height:2px;background:var(--text);display:block;transition:background .22s}
+.mmenu{display:none;position:fixed;top:68px;left:0;right:0;background:var(--mb);border-bottom:3px solid var(--red);z-index:299;padding:8px 5% 14px;flex-direction:column;box-shadow:0 4px 20px var(--sh)}
+.mmenu.open{display:flex}
+.mmenu a{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:16px;letter-spacing:2px;text-transform:uppercase;color:var(--t2);text-decoration:none;padding:11px 0;border-bottom:1px solid var(--border);cursor:pointer;-webkit-tap-highlight-color:transparent}
+.mmenu a:last-child{color:var(--red);border:none;padding-top:13px}
+
+/* ═══ ATOMS ═══ */
+.seye{font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;letter-spacing:4px;text-transform:uppercase;color:var(--red);margin-bottom:8px}
+.stitle{font-family:'Bebas Neue',sans-serif;font-size:clamp(32px,5vw,62px);line-height:1;color:var(--text);letter-spacing:2px}
+.sline{width:46px;height:3px;background:var(--red);margin:11px auto 0}
+.shead{text-align:center;margin-bottom:44px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:13px;letter-spacing:2px;text-transform:uppercase;padding:13px 26px;border:none;cursor:pointer;text-decoration:none;transition:background .2s,transform .18s,box-shadow .2s;white-space:nowrap;-webkit-tap-highlight-color:transparent}
+.btn-r{background:var(--red);color:#fff;clip-path:polygon(7px 0%,100% 0%,calc(100% - 7px) 100%,0% 100%);box-shadow:0 4px 14px rgba(200,1,26,.25)}
+.btn-r:hover{background:var(--dred);transform:translateY(-2px)}
+.btn-o{background:transparent;color:var(--red);border:2px solid var(--red);clip-path:polygon(7px 0%,100% 0%,calc(100% - 7px) 100%,0% 100%)}
+.btn-o:hover{background:var(--red);color:#fff}
+.btn-w{background:#25D366;color:#fff;clip-path:polygon(7px 0%,100% 0%,calc(100% - 7px) 100%,0% 100%);box-shadow:0 4px 14px rgba(37,211,102,.25)}
+.btn-w:hover{background:#1da851;transform:translateY(-2px)}
+.pill{display:inline-block;background:var(--rl);border:1px solid rgba(200,1,26,.2);color:var(--red);font-family:'Barlow Condensed',sans-serif;font-size:11px;letter-spacing:2px;text-transform:uppercase;padding:4px 10px;margin:3px 3px 0 0}
+
+/* ═══ TICKER ═══ */
+.ticker{background:var(--red);padding:8px 0;overflow:hidden}
+.ttk{display:flex;animation:tick 40s linear infinite;white-space:nowrap}
+.ti{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:12px;letter-spacing:3px;text-transform:uppercase;color:#fff;padding:0 20px;flex-shrink:0}
+.ts{color:rgba(255,255,255,.4)}
+@keyframes tick{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+
+/* ═══ BRAND STRIP ═══ */
+.bstrip{background:var(--red);padding:44px 5%;text-align:center;position:relative;overflow:hidden}
+.bstrip::before,.bstrip::after{content:'NAMO GOLD';font-family:'Bebas Neue',sans-serif;font-size:110px;color:rgba(0,0,0,.07);position:absolute;top:50%;transform:translateY(-50%);letter-spacing:8px;white-space:nowrap;pointer-events:none}
+.bstrip::before{left:-10px}.bstrip::after{right:-10px}
+.bsi{position:relative;z-index:1}
+.bst{font-family:'Bebas Neue',sans-serif;font-size:clamp(26px,5vw,50px);color:#fff;letter-spacing:4px;margin-bottom:5px}
+.bss{font-family:'Barlow Condensed',sans-serif;font-size:12px;letter-spacing:4px;text-transform:uppercase;color:rgba(255,255,255,.7)}
+.bsf{display:flex;justify-content:center;gap:28px;margin-top:16px;flex-wrap:wrap}
+.bsft{font-family:'Barlow Condensed',sans-serif;font-size:16px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#fff;display:flex;align-items:center;gap:6px}
+.bsft::before{content:'▶';font-size:9px;opacity:.5}
+
+/* ═══ FOOTER ═══ */
+footer{background:var(--text);padding:28px 5%;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;border-top:4px solid var(--red)}
+.fb{font-family:'Bebas Neue',sans-serif;font-size:22px;color:#fff;letter-spacing:3px}
+.fb span{color:var(--red)}
+.fbs{font-size:10px;color:#666;letter-spacing:2px;text-transform:uppercase;margin-top:2px}
+.fc{font-size:11px;color:#777}
+.fg{font-family:'Barlow Condensed',sans-serif;font-size:11px;letter-spacing:2px;color:#777}
+.fg b{color:var(--gold)}
+
+/* ═══ C-CARD (contact) ═══ */
+.cc{background:var(--panel);border:1px solid var(--border);padding:15px 18px;display:flex;align-items:flex-start;gap:12px;box-shadow:0 2px 8px var(--sh);transition:border-color .2s,box-shadow .2s}
+.cc:hover{border-color:var(--red);box-shadow:0 4px 14px rgba(200,1,26,.1)}
+.cci{width:38px;height:38px;background:var(--rl);border:1px solid rgba(200,1,26,.2);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:16px}
+.ccl{font-family:'Barlow Condensed',sans-serif;font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--red);margin-bottom:3px}
+.ccv{font-family:'Barlow Condensed',sans-serif;font-size:15px;font-weight:700;color:var(--text);line-height:1.5;word-break:break-word}
+.ccv a{color:inherit;text-decoration:none}.ccv a:hover{color:var(--red)}
+.ccs{font-size:11px;color:var(--t3);margin-top:2px}
+
+/* ═══ PERSON CARD ═══ */
+.pc{background:var(--panel);border:1px solid var(--border);border-top:3px solid var(--red);padding:18px;box-shadow:0 2px 8px var(--sh)}
+.pr{font-family:'Barlow Condensed',sans-serif;font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--red);margin-bottom:5px}
+.pn{font-family:'Barlow Condensed',sans-serif;font-size:19px;font-weight:800;color:var(--text);margin-bottom:4px}
+.pp{font-size:13px;color:var(--t3)}.pp a{color:var(--t3);text-decoration:none}.pp a:hover{color:var(--red)}
+.pgrid{display:grid;grid-template-columns:1fr 1fr;gap:11px}
+
+/* ═══ PAGE HERO ═══ */
+.ph{background:var(--ph);padding:68px 5% 48px;position:relative;overflow:hidden}
+.ph::before{font-family:'Bebas Neue',sans-serif;font-size:140px;color:rgba(255,255,255,.03);position:absolute;right:-10px;bottom:-28px;letter-spacing:8px;line-height:1;pointer-events:none}
+#page-about    .ph::before{content:'ABOUT US'}
+#page-products .ph::before{content:'PRODUCTS'}
+#page-enquiry  .ph::before{content:'ENQUIRY'}
+#page-contact  .ph::before{content:'CONTACT'}
+.phi{position:relative;z-index:1;max-width:680px}
+.ph .seye{color:#e04460}
+.ph .stitle{color:#fff}
+.ph p{font-size:14px;color:rgba(255,255,255,.58);line-height:1.75;margin-top:11px}
+
+/* ═══ TOAST / WA FAB ═══ */
+#toast{display:none;position:fixed;bottom:24px;left:50%;transform:translateX(-50%);z-index:9999;padding:11px 22px;font-family:'Barlow Condensed',sans-serif;font-size:14px;letter-spacing:1px;box-shadow:0 6px 24px rgba(0,0,0,.2);white-space:nowrap;border-radius:2px;max-width:90vw;text-align:center}
+#toast.err{background:var(--dred);color:#fff}
+.wafab{position:fixed;bottom:22px;right:18px;z-index:400;width:50px;height:50px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 16px rgba(37,211,102,.4);text-decoration:none;font-size:23px;transition:transform .2s,box-shadow .2s;-webkit-tap-highlight-color:transparent}
+.wafab:hover{transform:scale(1.1)}
+
+/* fade-in */
+.fi{opacity:0;transform:translateY(18px);transition:opacity .5s,transform .5s}
+.fi.vis{opacity:1;transform:translateY(0)}
+
+/* ═══════════════════════════════
+   HOME
+═══════════════════════════════ */
+#hero{min-height:calc(100vh - 68px);display:flex;align-items:center;position:relative;padding:56px 5% 56px;overflow:hidden;background:var(--bg)}
+.hgeo{position:absolute;inset:0;background-image:linear-gradient(var(--border) 1px,transparent 1px),linear-gradient(90deg,var(--border) 1px,transparent 1px);background-size:48px 48px;opacity:.5}
+.hslash{position:absolute;right:0;top:0;width:44%;height:100%;background:linear-gradient(150deg,var(--red),#7a000d);clip-path:polygon(30% 0%,100% 0%,100% 100%,6% 100%);opacity:.06}
+.hc{position:relative;z-index:2;max-width:640px;width:100%}
+.hbadge{display:inline-flex;align-items:center;gap:8px;background:var(--rl);border:1px solid rgba(200,1,26,.25);padding:5px 13px;margin-bottom:16px;font-family:'Barlow Condensed',sans-serif;font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--red)}
+.hbadge::before{content:'';width:6px;height:6px;background:var(--red);border-radius:50%;animation:blink 1.4s infinite;flex-shrink:0}
+@keyframes blink{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.4;transform:scale(1.5)}}
+.htitle{font-family:'Bebas Neue',sans-serif;font-size:clamp(62px,10vw,114px);line-height:.88;letter-spacing:2px;color:var(--text);margin-bottom:8px}
+.htitle .acc{color:var(--red)}
+.hsub{font-family:'Barlow Condensed',sans-serif;font-size:clamp(13px,2.2vw,21px);font-weight:700;letter-spacing:5px;text-transform:uppercase;color:var(--gold);margin-bottom:16px}
+.hdesc{font-size:15px;line-height:1.8;color:var(--t2);max-width:480px;margin-bottom:26px}
+.husps{display:flex;gap:20px;margin-bottom:26px;flex-wrap:wrap}
+.husp{display:flex;align-items:center;gap:7px;font-family:'Barlow Condensed',sans-serif;font-size:14px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--text)}
+.ugem{width:7px;height:7px;background:var(--red);clip-path:polygon(50% 0%,100% 50%,50% 100%,0% 50%);flex-shrink:0}
+.hbtns{display:flex;gap:10px;flex-wrap:wrap}
+.hstats{display:flex;gap:32px;margin-top:36px;padding-top:22px;border-top:2px solid var(--border);flex-wrap:wrap}
+.hsn{font-family:'Bebas Neue',sans-serif;font-size:42px;color:var(--red);line-height:1}
+.hsl{font-family:'Barlow Condensed',sans-serif;font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--t3)}
+
+/* category cards */
+.qwrap{background:var(--bg2);padding-bottom:52px}
+.qgrid{display:grid;grid-template-columns:repeat(4,1fr);border-top:4px solid var(--red)}
+.qcard{background:var(--panel);padding:28px 14px;text-align:center;cursor:pointer;border-right:1px solid var(--border);border-bottom:1px solid var(--border);position:relative;overflow:hidden;transition:background .2s,transform .2s,box-shadow .2s;-webkit-tap-highlight-color:transparent}
+.qcard:last-child{border-right:none}
+.qcard::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:var(--red);transform:scaleX(0);transition:transform .26s}
+.qcard:hover{background:var(--rl);transform:translateY(-3px);box-shadow:0 7px 22px rgba(200,1,26,.1)}
+.qcard:hover::after{transform:scaleX(1)}
+.qico{font-size:32px;margin-bottom:9px;display:block}
+.qtitle{font-family:'Barlow Condensed',sans-serif;font-size:15px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:var(--text);margin-bottom:5px}
+.qcount{font-family:'Barlow Condensed',sans-serif;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--red)}
+
+/* home contact bar */
+.hcbar{background:var(--panel);padding:40px 5%;border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.hcgrid{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.hci{display:flex;align-items:flex-start;gap:12px}
+.hcico{font-size:20px;margin-top:2px;flex-shrink:0}
+.hcl{font-family:'Barlow Condensed',sans-serif;font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--red);margin-bottom:3px}
+.hcv{font-family:'Barlow Condensed',sans-serif;font-size:14px;font-weight:700;color:var(--text);line-height:1.65}
+.hcv a{color:inherit;text-decoration:none;white-space:nowrap}.hcv a:hover{color:var(--red)}
+
+/* ═══════════════════════════════
+   ABOUT
+═══════════════════════════════ */
+.agrid{display:grid;grid-template-columns:1fr 1fr;gap:44px;align-items:start;max-width:1200px;margin:0 auto;padding:68px 5%}
+.abox{background:var(--panel);border:1px solid var(--border);padding:32px;box-shadow:0 4px 18px var(--sh)}
+.aboxtop{width:100%;height:4px;background:linear-gradient(90deg,var(--red),var(--gold),var(--red));margin-bottom:24px}
+.abrand{font-family:'Bebas Neue',sans-serif;font-size:60px;color:var(--text);line-height:1;letter-spacing:4px}
+.abrsub{font-family:'Barlow Condensed',sans-serif;font-size:11px;letter-spacing:5px;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:18px}
+.abody{font-size:14px;line-height:1.8;color:var(--t2);margin-bottom:14px}
+.afacts{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-top:22px}
+.afact{background:var(--bg2);border-left:3px solid var(--red);padding:10px 13px}
+.afl{font-family:'Barlow Condensed',sans-serif;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--t3);margin-bottom:2px}
+.afv{font-family:'Barlow Condensed',sans-serif;font-size:13px;font-weight:700;color:var(--text)}
+.agstin{font-family:'Barlow Condensed',sans-serif;font-size:11px;color:var(--t3);border-top:1px solid var(--border);padding-top:13px;margin-top:16px}
+.agstin b{color:var(--text)}
+.wsec{background:var(--bg2);padding:68px 5%}
+.wgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;max-width:1100px;margin:0 auto}
+.wcard{background:var(--panel);border:1px solid var(--border);padding:26px 22px;border-top:3px solid var(--red);box-shadow:0 2px 10px var(--sh);transition:transform .2s,box-shadow .2s}
+.wcard:hover{transform:translateY(-3px);box-shadow:0 7px 20px var(--sh2)}
+.wnum{font-family:'Bebas Neue',sans-serif;font-size:42px;color:var(--red);line-height:1;margin-bottom:5px;opacity:.22}
+.wtitle{font-family:'Barlow Condensed',sans-serif;font-size:18px;font-weight:800;text-transform:uppercase;color:var(--text);margin-bottom:7px}
+.wbody{font-size:13px;color:var(--t2);line-height:1.7}
+
+/* ═══════════════════════════════
+   PRODUCTS
+═══════════════════════════════ */
+.catbar{display:flex;gap:7px;justify-content:center;flex-wrap:wrap;padding:36px 5% 0}
+.ctab{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:11px;letter-spacing:2px;text-transform:uppercase;padding:8px 16px;border:2px solid var(--border2);color:var(--t2);background:var(--panel);cursor:pointer;transition:.18s;clip-path:polygon(5px 0%,100% 0%,calc(100% - 5px) 100%,0% 100%);box-shadow:0 2px 5px var(--sh);-webkit-tap-highlight-color:transparent}
+.ctab:hover,.ctab.active{background:var(--red);border-color:var(--red);color:#fff;box-shadow:0 3px 11px rgba(200,1,26,.3)}
+.pgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:16px;max-width:1300px;margin:0 auto;padding:24px 5% 68px}
+.pcard{background:var(--panel);border:1px solid var(--border);overflow:hidden;transition:transform .25s,box-shadow .25s;box-shadow:0 2px 8px var(--sh)}
+.pcard:hover{transform:translateY(-5px);box-shadow:0 11px 30px rgba(200,1,26,.1)}
+.pcard.hidden{display:none}
+.pimg{position:relative;width:100%;background:var(--bg2);border-bottom:1px solid var(--border)}
+.pimg svg{width:100%;height:185px;display:block}
+.pbadge{position:absolute;top:8px;left:8px;background:var(--red);color:#fff;font-family:'Barlow Condensed',sans-serif;font-size:9px;letter-spacing:2px;text-transform:uppercase;padding:3px 9px;clip-path:polygon(4px 0%,100% 0%,calc(100% - 4px) 100%,0% 100%)}
+.pbody{padding:14px 16px 16px}
+.pcat{font-family:'Barlow Condensed',sans-serif;font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--red);margin-bottom:3px}
+.pname{font-family:'Barlow Condensed',sans-serif;font-size:20px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:var(--text);margin-bottom:5px}
+.pdesc{font-size:12px;line-height:1.6;color:var(--t2)}
+.pspecs{margin-top:9px;display:flex;flex-wrap:wrap;gap:4px}
+.pspec{font-family:'Barlow Condensed',sans-serif;font-size:9px;letter-spacing:1px;text-transform:uppercase;color:var(--t3);background:var(--bg2);border:1px solid var(--border);padding:2px 8px}
+.pfoot{display:flex;align-items:center;justify-content:space-between;margin-top:10px;padding-top:9px;border-top:1px solid var(--border)}
+.penq{font-family:'Barlow Condensed',sans-serif;font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--red);background:var(--rl);border:1px solid rgba(200,1,26,.22);padding:5px 13px;cursor:pointer;transition:.18s;text-decoration:none;-webkit-tap-highlight-color:transparent}
+.penq:hover{background:var(--red);color:#fff}
+.pbr{font-family:'Barlow Condensed',sans-serif;font-size:9px;letter-spacing:2px;color:var(--t3)}
+
+/* ═══════════════════════════════
+   ENQUIRY
+═══════════════════════════════ */
+.elayout{display:grid;grid-template-columns:1.2fr 1fr;gap:36px;max-width:1200px;margin:0 auto;padding:52px 5% 68px}
+.eform{background:var(--panel);border:1px solid var(--border);padding:36px;position:relative;box-shadow:0 4px 18px var(--sh)}
+.eform::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--red),var(--gold),var(--red))}
+.frow{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px}
+.fgrp{display:flex;flex-direction:column;gap:5px}
+.fgrp.full{grid-column:1/-1}
+.flbl{font-family:'Barlow Condensed',sans-serif;font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--t2)}
+.flbl span{color:var(--red)}
+.finp,.fsel,.ftxt{background:var(--bg2);border:2px solid var(--border);color:var(--text);font-family:'Barlow',sans-serif;font-size:14px;padding:11px 13px;outline:none;transition:border-color .2s,box-shadow .2s;width:100%;-webkit-appearance:none;border-radius:0}
+.finp:focus,.fsel:focus,.ftxt:focus{border-color:var(--red);box-shadow:0 0 0 3px rgba(200,1,26,.07)}
+.fsel option,.fsel optgroup{background:var(--panel)}
+.ftxt{resize:vertical;min-height:96px}
+.fnote{font-size:11px;color:var(--t3);margin-top:9px;text-align:center;line-height:1.5}
+.easide{display:flex;flex-direction:column;gap:12px}
+.eatitle{font-family:'Bebas Neue',sans-serif;font-size:28px;color:var(--text);letter-spacing:2px;margin-bottom:2px}
+
+/* ═══════════════════════════════
+   CONTACT
+═══════════════════════════════ */
+.clayout{display:grid;grid-template-columns:1fr 1fr;gap:32px;max-width:1200px;margin:0 auto;padding:60px 5% 68px}
+.ccol{display:flex;flex-direction:column;gap:11px}
+.hbox{background:var(--panel);border:1px solid var(--border);padding:22px;box-shadow:0 2px 8px var(--sh)}
+.hrow{display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid var(--border)}
+.hrow:last-child{border-bottom:none}
+.hday{font-family:'Barlow Condensed',sans-serif;font-size:13px;color:var(--t2)}
+.htime{font-family:'Barlow Condensed',sans-serif;font-size:13px;font-weight:700;color:var(--text)}
+.htime.cl{color:var(--red)}
+
+/* ═══════════════════════════════
+   RESPONSIVE — TABLET ≤960
+═══════════════════════════════ */
+@media(max-width:960px){
+  nav{padding:0 4%}
+  .nlinks{display:none}
+  .ham{display:flex}
+  .agrid{grid-template-columns:1fr;gap:22px;padding:44px 5%}
+  .elayout{grid-template-columns:1fr;gap:24px;padding:36px 5% 52px}
+  .clayout{grid-template-columns:1fr;gap:22px;padding:36px 5% 52px}
+  .qgrid{grid-template-columns:repeat(2,1fr)}
+  .wgrid{grid-template-columns:1fr 1fr;gap:12px}
+  .afacts{grid-template-columns:1fr 1fr}
+  .hcgrid{grid-template-columns:1fr;gap:18px}
+  footer{flex-direction:column;text-align:center;gap:9px;padding:22px 5%}
+  .bstrip::before,.bstrip::after{display:none}
+  .eform{padding:26px 22px}
+}
+
+/* ═══════════════════════════════
+   RESPONSIVE — MOBILE ≤600
+═══════════════════════════════ */
+@media(max-width:600px){
+  .nbrand small{display:none}
+  /* Hero */
+  #hero{padding:32px 5% 40px;min-height:auto;align-items:flex-start}
+  .htitle{font-size:clamp(56px,17vw,84px)}
+  .hsub{letter-spacing:3px}
+  .hdesc{font-size:13px}
+  .husps{gap:10px}
+  .husp{font-size:13px}
+  .hbtns{flex-direction:column;gap:9px}
+  .hbtns .btn{width:100%;justify-content:center;padding:13px}
+  .hstats{gap:12px;margin-top:24px;padding-top:16px}
+  .hsn{font-size:32px}
+  /* Category */
+  .qcard{padding:20px 10px}
+  .qico{font-size:26px;margin-bottom:7px}
+  .qtitle{font-size:13px;letter-spacing:0}
+  /* Products */
+  .catbar{padding:24px 4% 0;gap:5px}
+  .ctab{padding:7px 12px;font-size:10px}
+  .pgrid{grid-template-columns:1fr 1fr;gap:10px;padding:18px 4% 48px}
+  .pimg svg{height:130px}
+  .pname{font-size:16px}
+  .pdesc{display:none}
+  .pspecs{display:none}
+  /* About */
+  .agrid{padding:32px 4%}
+  .abrand{font-size:50px}
+  .afacts{grid-template-columns:1fr}
+  .abox{padding:22px}
+  /* Why */
+  .wsec{padding:44px 4%}
+  .wgrid{grid-template-columns:1fr;gap:10px}
+  /* Enquiry */
+  .elayout{padding:28px 4% 44px}
+  .eform{padding:20px 14px}
+  .frow{grid-template-columns:1fr}
+  /* Contact */
+  .clayout{padding:28px 4% 44px}
+  .pgrid{grid-template-columns:1fr}
+  /* Page hero */
+  .ph{padding:44px 4% 32px}
+  .ph .stitle{font-size:clamp(36px,13vw,56px)}
+  .ph::before{font-size:72px}
+  /* Home contact bar */
+  .hcbar{padding:28px 4%}
+  /* Brand strip */
+  .bstrip{padding:28px 4%}
+  .bsf{gap:12px}.bsft{font-size:14px}
+  /* Footer */
+  .fb{font-size:19px}
+}
+
+/* ═══ VERY SMALL ≤380 ═══ */
+@media(max-width:380px){
+  .htitle{font-size:50px}
+  .pgrid{grid-template-columns:1fr}
+  .pgrid.pc2{grid-template-columns:1fr 1fr}
+}
+</style>
+</head>
+<body>
+
+<a href="https://wa.me/917297930635" target="_blank" class="wafab" title="WhatsApp Us">💬</a>
+<div id="toast"></div>
+
+<!-- NAV -->
+<nav id="mnav">
+  <div class="nlogo" onclick="goto('home')">
+    <div class="nico"><span>SK</span></div>
+    <div class="nbrand">
+      <strong>S.K. Traders</strong>
+      <small>NAMO Gold Genuine Parts</small>
+    </div>
+  </div>
+  <ul class="nlinks">
+    <li><a id="nl-home"     onclick="goto('home')"     class="act">Home</a></li>
+    <li><a id="nl-about"    onclick="goto('about')">About Us</a></li>
+    <li><a id="nl-products" onclick="goto('products')">Products</a></li>
+    <li><a id="nl-enquiry"  onclick="goto('enquiry')">Enquiry</a></li>
+    <li><a id="nl-contact"  onclick="goto('contact')">Contact</a></li>
+    <li><a onclick="goto('enquiry')" class="ncta">Get Quote</a></li>
+  </ul>
+  <div class="nctrl">
+    <div class="tbtn" id="tbtn" onclick="toggleTheme()" title="Toggle theme">🌙</div>
+    <div class="ham" onclick="toggleMob()"><span></span><span></span><span></span></div>
+  </div>
+</nav>
+<div class="mmenu" id="mmenu">
+  <a onclick="goto('home');closeMob()">Home</a>
+  <a onclick="goto('about');closeMob()">About Us</a>
+  <a onclick="goto('products');closeMob()">Products</a>
+  <a onclick="goto('enquiry');closeMob()">Enquiry</a>
+  <a onclick="goto('contact');closeMob()">Contact</a>
+  <a onclick="goto('enquiry');closeMob()">▶ Get Quote</a>
+</div>
+
+<!-- ══ HOME ══ -->
+<div id="page-home" class="page active">
+  <div id="hero">
+    <div class="hgeo"></div><div class="hslash"></div>
+    <div class="hc">
+      <div class="hbadge">Wholesaler &amp; Distributor — Jaipur, Rajasthan</div>
+      <h1 class="htitle"><span class="acc">S.K.</span><br>TRADERS</h1>
+      <div class="hsub">NAMO Gold Genuine Parts</div>
+      <p class="hdesc">Jaipur's trusted wholesale distributor of two-wheeler body parts, mechanical components, and accessories. 20+ product lines, genuine quality for every brand.</p>
+      <div class="husps">
+        <div class="husp"><div class="ugem"></div>Friction Free</div>
+        <div class="husp"><div class="ugem"></div>Durable</div>
+        <div class="husp"><div class="ugem"></div>Performer</div>
+      </div>
+      <div class="hbtns">
+        <button class="btn btn-r" onclick="goto('products')">View All 20 Products</button>
+        <button class="btn btn-o" onclick="goto('enquiry')">Send Enquiry</button>
+      </div>
+      <div class="hstats">
+        <div><div class="hsn">20+</div><div class="hsl">Product Lines</div></div>
+        <div><div class="hsn">2W</div><div class="hsl">Specialists</div></div>
+        <div><div class="hsn">GST</div><div class="hsl">Registered</div></div>
+        <div><div class="hsn">B2B</div><div class="hsl">Wholesale</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="ticker"><div class="ttk" id="ttk"></div></div>
+
+  <div class="qwrap">
+    <div class="qgrid fi">
+      <div class="qcard" onclick="goto('products');setTimeout(()=>fcat('body',null),60)"><span class="qico">🏍️</span><div class="qtitle">Body &amp; Exterior</div><div class="qcount">8 Products</div></div>
+      <div class="qcard" onclick="goto('products');setTimeout(()=>fcat('lighting',null),60)"><span class="qico">💡</span><div class="qtitle">Lighting</div><div class="qcount">3 Products</div></div>
+      <div class="qcard" onclick="goto('products');setTimeout(()=>fcat('mechanical',null),60)"><span class="qico">⚙️</span><div class="qtitle">Mechanical</div><div class="qcount">6 Products</div></div>
+      <div class="qcard" onclick="goto('products');setTimeout(()=>fcat('other',null),60)"><span class="qico">🎨</span><div class="qtitle">Accessories</div><div class="qcount">3 Products</div></div>
+    </div>
+    <div style="text-align:center;padding:40px 5% 0" class="fi">
+      <div class="seye">We Stock &amp; Supply</div>
+      <h2 class="stitle">What We Offer</h2>
+      <div class="sline"></div>
+      <p style="font-size:14px;color:var(--t2);max-width:500px;margin:14px auto 0;line-height:1.75">Complete range of two-wheeler spare parts under the NAMO Gold brand — trusted by mechanics, dealers and workshops across Rajasthan.</p>
+    </div>
+  </div>
+
+  <div class="bstrip"><div class="bsi">
+    <div class="bst">NAMO Gold Genuine Parts</div>
+    <div class="bss">Manufactured &amp; Marketed by S.K. Traders, Jaipur (Raj.)</div>
+    <div class="bsf"><span class="bsft">Friction Free</span><span class="bsft">Durable</span><span class="bsft">Performer</span><span class="bsft">GST Registered</span></div>
+  </div></div>
+
+  <div class="hcbar fi">
+    <div class="hcgrid">
+      <div class="hci"><div class="hcico">📍</div><div><div class="hcl">Address</div><div class="hcv" style="font-size:13px;font-family:'Barlow',sans-serif;font-weight:400">Plot 73–74, Yojana Hanuman Nagar-B,<br>Sarna Dungar, Jaipur – 302012</div></div></div>
+      <div class="hci"><div class="hcico">📞</div><div><div class="hcl">Call Us</div><div class="hcv"><a href="tel:+917297930635">+91 72979 30635</a><br><a href="tel:+918619047483">+91 86190 47483</a></div></div></div>
+      <div class="hci"><div class="hcico">🕐</div><div><div class="hcl">Hours</div><div class="hcv">Mon–Sat: 9 AM – 7 PM<br><span style="color:var(--red)">Sunday: Closed</span></div></div></div>
+    </div>
+  </div>
+
+  <footer>
+    <div><div class="fb">S.K. <span>TRADERS</span></div><div class="fbs">NAMO Gold Genuine Parts · Jaipur</div></div>
+    <div class="fc">© 2025 S.K. Traders. All rights reserved.</div>
+    <div class="fg">GSTIN <b>08AYCPJ8860D1ZD</b></div>
+  </footer>
+</div>
+
+<!-- ══ ABOUT ══ -->
+<div id="page-about" class="page">
+  <div class="ph"><div class="phi"><div class="seye">Our Story</div><h1 class="stitle">About<br>S.K. Traders</h1><p>Trusted wholesale distributors of two-wheeler spare parts under the NAMO Gold Genuine Parts brand, Jaipur.</p></div></div>
+  <div class="agrid">
+    <div class="fi">
+      <div class="seye">Who We Are</div>
+      <h2 class="stitle" style="margin-bottom:0">The Company</h2>
+      <div style="width:42px;height:3px;background:var(--red);margin:11px 0 18px"></div>
+      <p class="abody">S.K. Traders is a leading wholesale distributor of two-wheeler body parts, headquartered in Jaipur, Rajasthan. We operate from the RIICO Industrial Area, Sarna Dungar, Benad Road — one of Jaipur's key automotive hubs.</p>
+      <p class="abody">Under our flagship brand <strong>NAMO Gold Genuine Parts</strong>, we supply body parts, mechanical components, lighting, and accessories for motorcycles and scooters across India.</p>
+      <p class="abody">Every product is sourced under strict quality checks to ensure genuine fitment, long service life, and peak performance — trusted by workshops, mechanics, and retailers throughout Rajasthan.</p>
+      <div class="afacts">
+        <div class="afact"><div class="afl">Nature</div><div class="afv">Wholesaler / Distributor</div></div>
+        <div class="afact"><div class="afl">Location</div><div class="afv">Jaipur, Rajasthan</div></div>
+        <div class="afact"><div class="afl">Brand</div><div class="afv">NAMO Gold</div></div>
+        <div class="afact"><div class="afl">Zone</div><div class="afv">RIICO, Sarna Dungar</div></div>
+        <div class="afact"><div class="afl">Specialization</div><div class="afv">Two Wheeler Parts</div></div>
+        <div class="afact"><div class="afl">Registration</div><div class="afv">GST Registered</div></div>
+      </div>
+    </div>
+    <div class="fi">
+      <div class="abox">
+        <div class="aboxtop"></div>
+        <div class="abrand">NAMO</div>
+        <span class="abrsub">Gold · Genuine Parts</span>
+        <p style="font-size:13px;line-height:1.8;color:var(--t2);margin-bottom:16px">NAMO Gold is our quality benchmark — each part sourced under strict standards to ensure genuine fitment, long service life, and peak performance on every road.</p>
+        <div><span class="pill">▶ Friction Free</span><span class="pill">▶ Durable</span><span class="pill">▶ Performer</span><span class="pill">▶ Wide Range</span></div>
+        <div class="agstin">GSTIN · <b>08AYCPJ8860D1ZD</b><br><span style="font-size:10px">Registered under GST, Government of India</span></div>
+      </div>
+      <div style="background:var(--panel);border:1px solid var(--border);padding:22px;margin-top:12px;box-shadow:0 2px 8px var(--sh)">
+        <div class="seye" style="margin-bottom:10px">Our Team</div>
+        <div class="pgrid">
+          <div class="pc"><div class="pr">Contact Person</div><div class="pn">Gaurav Jain</div><div class="pp"><a href="tel:+918619047483">+91 86190 47483</a></div></div>
+          <div class="pc"><div class="pr">Contact Person</div><div class="pn">Saurabh Jain</div><div class="pp"><a href="tel:+918619080532">+91 86190 80532</a></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="wsec">
+    <div class="shead fi"><div class="seye">Our Strengths</div><h2 class="stitle">Why Choose Us</h2><div class="sline"></div></div>
+    <div class="wgrid fi">
+      <div class="wcard"><div class="wnum">01</div><div class="wtitle">Genuine Parts</div><p class="wbody">Every NAMO Gold product meets strict quality standards — authentic fitment and reliable performance across all major two-wheeler models.</p></div>
+      <div class="wcard"><div class="wnum">02</div><div class="wtitle">Wide Range</div><p class="wbody">20+ product lines covering body, lighting, mechanical, and accessories — a single source for everything two-wheeler in Jaipur.</p></div>
+      <div class="wcard"><div class="wnum">03</div><div class="wtitle">Wholesale Supply</div><p class="wbody">Competitive pricing for mechanics, workshops, retailers, and dealers. Bulk orders welcome with prompt dispatch from Jaipur.</p></div>
+    </div>
+  </div>
+  <div class="bstrip"><div class="bsi"><div class="bst">NAMO Gold Genuine Parts</div><div class="bss">Friction Free · Durable · Performer</div></div></div>
+  <footer><div><div class="fb">S.K. <span>TRADERS</span></div><div class="fbs">NAMO Gold · Jaipur</div></div><div class="fc">© 2025 S.K. Traders.</div><div class="fg">GSTIN <b>08AYCPJ8860D1ZD</b></div></footer>
+</div>
+
+<!-- ══ PRODUCTS ══ -->
+<div id="page-products" class="page">
+  <div class="ph"><div class="phi"><div class="seye">Our Range</div><h1 class="stitle">Products</h1><p>20 product lines across body, lighting, mechanical, and accessories — all major two-wheeler brands.</p></div></div>
+  <div class="catbar">
+    <button class="ctab active" onclick="fcat('all',this)">All (20)</button>
+    <button class="ctab" onclick="fcat('body',this)">Body &amp; Exterior</button>
+    <button class="ctab" onclick="fcat('lighting',this)">Lighting</button>
+    <button class="ctab" onclick="fcat('mechanical',this)">Mechanical</button>
+    <button class="ctab" onclick="fcat('other',this)">Accessories</button>
+  </div>
+  <div class="pgrid" id="pgrid"></div>
+  <footer><div><div class="fb">S.K. <span>TRADERS</span></div><div class="fbs">NAMO Gold · Jaipur</div></div><div class="fc">© 2025 S.K. Traders.</div><div class="fg">GSTIN <b>08AYCPJ8860D1ZD</b></div></footer>
+</div>
+
+<!-- ══ ENQUIRY ══ -->
+<div id="page-enquiry" class="page">
+  <div class="ph"><div class="phi"><div class="seye">Get In Touch</div><h1 class="stitle">Send an Enquiry</h1><p>Fill in the form — opens WhatsApp with your enquiry pre-filled for our team.</p></div></div>
+  <div class="elayout">
+    <div class="fi">
+      <div class="eform">
+        <div class="frow">
+          <div class="fgrp"><label class="flbl">Full Name <span>*</span></label><input type="text" id="fn" class="finp" placeholder="Your full name" autocomplete="name"></div>
+          <div class="fgrp"><label class="flbl">Phone <span>*</span></label><input type="tel" id="fp" class="finp" placeholder="+91 XXXXX XXXXX" autocomplete="tel"></div>
+        </div>
+        <div class="frow">
+          <div class="fgrp">
+            <label class="flbl">Product <span>*</span></label>
+            <select id="fpr" class="fsel">
+              <option value="" disabled selected>Select a product</option>
+              <optgroup label="Body &amp; Exterior"><option>Ex-Visor</option><option>Mudguard</option><option>Side Panel</option><option>Tail Panel</option><option>Leg Guard</option><option>Doom</option><option>Fuel Tank</option><option>Side Box</option></optgroup>
+              <optgroup label="Lighting"><option>Indicator</option><option>Head Light</option><option>Tail Light</option></optgroup>
+              <optgroup label="Mechanical"><option>Control Cables</option><option>Brake Shoe</option><option>Side Stand</option><option>Main Stand</option><option>Footrest</option><option>Filter</option></optgroup>
+              <optgroup label="Accessories"><option>Meter Case</option><option>Seat Cover</option><option>Paint Spray</option><option>Multiple Products</option></optgroup>
+            </select>
+          </div>
+          <div class="fgrp"><label class="flbl">Quantity <span>*</span></label><input type="text" id="fq" class="finp" placeholder="e.g. 50 pcs, 1 carton"></div>
+        </div>
+        <div class="fgrp full" style="margin-bottom:14px">
+          <label class="flbl">Message / Notes</label>
+          <textarea id="fm" class="ftxt" placeholder="Vehicle model, brand, or specific requirements..."></textarea>
+        </div>
+        <button class="btn btn-w" style="width:100%;border-radius:2px;padding:14px;font-size:14px" onclick="submitWA()">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.12.554 4.11 1.524 5.83L0 24l6.336-1.51A11.94 11.94 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 0 1-5.006-1.366l-.36-.213-3.76.896.955-3.666-.234-.376A9.818 9.818 0 1 1 12 21.818z"/></svg>
+          Send Enquiry via WhatsApp
+        </button>
+        <p class="fnote">* Required &nbsp;·&nbsp; Opens WhatsApp with details pre-filled &nbsp;·&nbsp; Response within 24 hrs</p>
+      </div>
+    </div>
+    <div class="easide fi">
+      <div class="eatitle">Reach Us Directly</div>
+      <p style="font-size:13px;color:var(--t2);line-height:1.7">Mon–Sat, 9 AM–7 PM for calls and WhatsApp.</p>
+      <div class="cc"><div class="cci">📞</div><div><div class="ccl">Gaurav Jain</div><div class="ccv"><a href="tel:+918619047483">+91 86190 47483</a></div></div></div>
+      <div class="cc"><div class="cci">📞</div><div><div class="ccl">Saurabh Jain</div><div class="ccv"><a href="tel:+918619080532">+91 86190 80532</a></div></div></div>
+      <div class="cc"><div class="cci">💬</div><div><div class="ccl">WhatsApp</div><div class="ccv"><a href="https://wa.me/917297930635">+91 72979 30635</a></div><div class="ccs">Fastest response</div></div></div>
+      <div class="cc"><div class="cci">📍</div><div><div class="ccl">Visit Us</div><div class="ccv" style="font-size:13px;font-family:'Barlow',sans-serif;font-weight:400;line-height:1.6">Plot 73–74, Yojana Hanuman Nagar-B,<br>Sarna Dungar, Jaipur – 302012</div></div></div>
+      <div class="cc"><div class="cci">🕐</div><div><div class="ccl">Hours</div><div class="ccv" style="font-size:14px">Mon–Sat: 9 AM – 7 PM<br><span style="color:var(--red)">Sunday: Closed</span></div></div></div>
+    </div>
+  </div>
+  <footer><div><div class="fb">S.K. <span>TRADERS</span></div><div class="fbs">NAMO Gold · Jaipur</div></div><div class="fc">© 2025 S.K. Traders.</div><div class="fg">GSTIN <b>08AYCPJ8860D1ZD</b></div></footer>
+</div>
+
+<!-- ══ CONTACT ══ -->
+<div id="page-contact" class="page">
+  <div class="ph"><div class="phi"><div class="seye">Find Us</div><h1 class="stitle">Contact Details</h1><p>Visit our facility, call or WhatsApp us. Mon–Sat, 9 AM–7 PM.</p></div></div>
+  <div class="clayout">
+    <div class="ccol fi">
+      <div class="cc"><div class="cci">📍</div><div><div class="ccl">Factory &amp; Office</div><div class="ccv" style="font-size:13px;font-family:'Barlow',sans-serif;font-weight:400;line-height:1.65">Plot No. 73 &amp; 74, Yojana Hanuman Nagar-B,<br>Sarna Dungar (Jhotwara), Jaipur – 302012</div><div class="ccs">RIICO Industrial Area, Benad Road</div></div></div>
+      <div class="cc"><div class="cci">📞</div><div><div class="ccl">Phone Numbers</div><div class="ccv"><a href="tel:+917297930635">+91 72979 30635</a><br><a href="tel:+918619047483">+91 86190 47483</a></div><div class="ccs">Mon–Sat, 9 AM – 7 PM</div></div></div>
+      <div class="cc"><div class="cci">💬</div><div><div class="ccl">WhatsApp</div><div class="ccv"><a href="https://wa.me/917297930635">+91 72979 30635</a></div><div class="ccs">Fastest response channel</div></div></div>
+      <div class="cc"><div class="cci">🧾</div><div><div class="ccl">GSTIN</div><div class="ccv" style="font-size:13px;word-break:break-all">08AYCPJ8860D1ZD</div><div class="ccs">GST Registered</div></div></div>
+    </div>
+    <div class="fi" style="display:flex;flex-direction:column;gap:13px">
+      <div class="seye" style="margin-bottom:2px">Our Team</div>
+      <div class="pgrid">
+        <div class="pc"><div class="pr">Contact Person</div><div class="pn">Gaurav Jain</div><div class="pp"><a href="tel:+918619047483">+91 86190 47483</a></div></div>
+        <div class="pc"><div class="pr">Contact Person</div><div class="pn">Saurabh Jain</div><div class="pp"><a href="tel:+918619080532">+91 86190 80532</a></div></div>
+      </div>
+      <div class="hbox">
+        <div class="seye" style="margin-bottom:11px">Business Hours</div>
+        <div class="hrow"><span class="hday">Monday – Saturday</span><span class="htime">9:00 AM – 7:00 PM</span></div>
+        <div class="hrow"><span class="hday">Sunday</span><span class="htime cl">Closed</span></div>
+        <button class="btn btn-r" style="width:100%;margin-top:16px;justify-content:center" onclick="goto('enquiry')">▶ Send Online Enquiry</button>
+      </div>
+      <div style="border:1px solid var(--border);overflow:hidden;box-shadow:0 2px 8px var(--sh)">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3558.169!2d75.7347!3d26.9799!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x396db1a3e3b4a1d7%3A0xabcd1234!2sSarna%20Dungar%2C%20Jhotwara%2C%20Jaipur%2C%20Rajasthan%20302012!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin" width="100%" height="220" style="display:block;border:0" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+  </div>
+  <footer><div><div class="fb">S.K. <span>TRADERS</span></div><div class="fbs">NAMO Gold · Jaipur</div></div><div class="fc">© 2025 S.K. Traders.</div><div class="fg">GSTIN <b>08AYCPJ8860D1ZD</b></div></footer>
+</div>
+
+<script>
+const WA='917297930635';
+const PRODS=[
+  {cat:'body',     b:'Body',        n:'Ex-Visor',      cl:'Body & Exterior',        d:'Aerodynamic windshield visors. UV-stabilised polymer, full weather protection, OEM fitment.',           s:['UV Stabilised','Scooters','OEM Fit','Weatherproof']},
+  {cat:'body',     b:'Body',        n:'Mudguard',       cl:'Body & Exterior',        d:'Front & rear mudguards for all major two-wheelers. ABS plastic, anti-rust construction.',               s:['Front & Rear','ABS Plastic','All Models','Anti-Rust']},
+  {cat:'body',     b:'Body',        n:'Side Panel',     cl:'Body & Exterior',        d:'OEM-matched body side panels, exact contours, deep gloss finish, ready to install.',                    s:['OEM Matched','Deep Gloss','Wide Range','Lightweight']},
+  {cat:'body',     b:'Body',        n:'Tail Panel',     cl:'Body & Exterior',        d:'Rear tail panels in durable ABS, heat-resistant, clean factory finish.',                                s:['ABS Material','Heat Resistant','Pre-Painted','OEM Fit']},
+  {cat:'body',     b:'Body',        n:'Leg Guard',      cl:'Body & Exterior',        d:'Impact-resistant moulded leg shields for scooters with ventilation slots.',                             s:['Impact Resistant','Scooters','Ventilated','Chrome Strip']},
+  {cat:'body',     b:'Body',        n:'Doom',           cl:'Body & Exterior',        d:'Precision-moulded dome body components, high-gloss finish, NAMO Gold branding.',                       s:['Precision Mould','High Gloss','Scooters','Bikes']},
+  {cat:'body',     b:'Body',        n:'Fuel Tank',      cl:'Body & Exterior',        d:'Replacement fuel tanks, corrosion-resistant, leak-proof. Hero, Honda, Bajaj, TVS compatible.',          s:['Leak-Proof','Anti-Corrosion','All Brands','Steel Built']},
+  {cat:'body',     b:'Body',        n:'Side Box',       cl:'Body & Exterior',        d:'Sturdy scooter side storage boxes, secure latch, ABS shell with chrome accents.',                       s:['Secure Latch','ABS Shell','Scooters','Chrome Accent']},
+  {cat:'lighting', b:'Lighting',    n:'Indicator',      cl:'Lighting',               d:'Turn indicator assemblies, crisp amber visibility, UV-resistant lens, all major brands.',              s:['Amber Lens','UV Resistant','12V / 10W','All Models']},
+  {cat:'lighting', b:'Lighting',    n:'Head Light',     cl:'Lighting',               d:'Headlight assemblies for superior night visibility. Fits Hero, Honda, Bajaj, TVS, Yamaha.',            s:['High Beam','Clear Lens','All Brands','IP65 Rating']},
+  {cat:'lighting', b:'Lighting',    n:'Tail Light',     cl:'Lighting',               d:'Rear tail light units, enhanced brightness, integrated brake + running light.',                        s:['Dual Function','LED Compatible','Bright Lens','All Models']},
+  {cat:'mechanical',b:'Mechanical', n:'Control Cables', cl:'Mechanical',             d:'Friction-free inner wire for smooth throttle, brake, and clutch operation.',                           s:['Friction Free','Throttle / Brake','Clutch Cable','All Models']},
+  {cat:'mechanical',b:'Mechanical', n:'Brake Shoe',     cl:'Mechanical',             d:'High-friction brake shoes, heat-resistant organic lining, fade-free stopping.',                        s:['Heat Resistant','No Fade','Drum Brakes','Precision Fit']},
+  {cat:'mechanical',b:'Mechanical', n:'Side Stand',     cl:'Mechanical',             d:'Spring-loaded alloy steel side stands, powder-coated finish, 100–200cc bikes.',                       s:['Spring Return','Powder Coated','Alloy Steel','100–200cc']},
+  {cat:'mechanical',b:'Mechanical', n:'Main Stand',     cl:'Mechanical',             d:'Heavy-duty centre stands, alloy construction, easy one-push deployment.',                              s:['Heavy Duty','Alloy Build','Easy Deploy','Stable Parking']},
+  {cat:'mechanical',b:'Mechanical', n:'Footrest',       cl:'Mechanical',             d:'Anti-slip knurled grip footrests, foldable with return spring, bikes and scooters.',                   s:['Anti-Slip Grip','Foldable','Spring Return','Bikes & Scooters']},
+  {cat:'mechanical',b:'Mechanical', n:'Filter',         cl:'Mechanical',             d:'Multi-layer oil and air filters. Protects engine from dust and metal particles.',                      s:['Multi-Layer','Engine Protection','Oil & Air','All Engines']},
+  {cat:'other',    b:'Electrical',  n:'Meter Case',     cl:'Dashboard',              d:'Speedometer cluster cases, anti-glare housing, OEM fitment for all major models.',                     s:['Anti-Glare','OEM Fit','Speedo & Tacho','All Models']},
+  {cat:'other',    b:'Comfort',     n:'Seat Cover',     cl:'Interior & Comfort',     d:'Diamond-stitch PVC leather seat covers. UV & waterproof, easy clip-on fit.',                           s:['Waterproof PVC','UV Proof','Clip-On Fit','All Models']},
+  {cat:'other',    b:'Accessories', n:'Paint Spray',    cl:'Accessories',            d:'Fast-drying, chip-resistant automotive paint spray. Wide colour range, 400ml.',                        s:['Fast Drying','Chip Resistant','Wide Colours','400ml Can']}
+];
+const SVGS={
+'Ex-Visor':`<svg viewBox="0 0 480 200"><rect width="480" height="200" fill="#EEE9E0"/><path d="M100 160 Q120 60 240 50 Q360 60 380 160 Z" fill="none" stroke="#C8011A" stroke-width="3"/><path d="M108 155 Q126 72 240 62 Q354 72 372 155 Z" fill="rgba(180,220,255,0.25)" stroke="rgba(100,150,200,0.4)" stroke-width="1.5"/><path d="M150 130 Q175 85 220 78" fill="none" stroke="rgba(255,255,255,0.7)" stroke-width="4" stroke-linecap="round"/><line x1="100" y1="160" x2="88" y2="175" stroke="#888" stroke-width="4" stroke-linecap="round"/><line x1="380" y1="160" x2="392" y2="175" stroke="#888" stroke-width="4" stroke-linecap="round"/><circle cx="88" cy="178" r="6" fill="#ccc" stroke="#C8011A" stroke-width="1.5"/><circle cx="392" cy="178" r="6" fill="#ccc" stroke="#C8011A" stroke-width="1.5"/><text x="240" y="195" text-anchor="middle" font-family="Arial Black" font-size="11" fill="#C8011A" letter-spacing="4" font-weight="900">EX-VISOR</text></svg>`,
+'Mudguard':`<svg viewBox="0 0 480 200"><rect width="480" height="200" fill="#EEE9E0"/><path d="M160 170 L160 100 Q160 40 240 40 Q320 40 320 100 L320 170" fill="none" stroke="#C8011A" stroke-width="3"/><path d="M170 168 L170 105 Q170 55 240 55 Q310 55 310 105 L310 168" fill="rgba(200,1,26,0.06)" stroke="rgba(200,1,26,0.3)" stroke-width="1.5"/><circle cx="160" cy="170" r="7" fill="#ddd" stroke="#C8011A" stroke-width="2"/><circle cx="320" cy="170" r="7" fill="#ddd" stroke="#C8011A" stroke-width="2"/><circle cx="160" cy="170" r="3" fill="#C8011A"/><circle cx="320" cy="170" r="3" fill="#C8011A"/><text x="240" y="195" text-anchor="middle" font-family="Arial Black" font-size="11" fill="#C8011A" letter-spacing="4" font-weight="900">MUDGUARD</text></svg>`,
+'Side Panel':`<svg viewBox="0 0 480 200"><rect width="480" height="200" fill="#EEE9E0"/><path d="M80 55 Q130 40 260 42 Q360 44 400 70 L410 140 Q390 168 300 170 Q200 172 130 160 Q90 150 75 130 Z" fill="rgba(200,1,26,0.06)" stroke="#C8011A" stroke-width="2.5"/><circle cx="105" cy="100" r="6" fill="#ddd" stroke="#C8011A" stroke-width="1.5"/><circle cx="380" cy="95" r="6" fill="#ddd" stroke="#C8011A" stroke-width="1.5"/><path d="M140 58 Q220 50 300 54" fill="none" stroke="rgba(255,255,255,0.9)" stroke-width="3" stroke-linecap="round"/><text x="240" y="196" text-anchor="middle" font-family="Arial Black" font-size="11" fill="#C8011A" letter-spacing="4" font-weight="900">SIDE PANEL</text></svg>`,
+'Tail Panel':`<svg viewBox="0 0 480 200"><rect width="480" height="200" fill="#EEE9E0"/><path d="M120 55 Q240 45 360 55 L400 100 Q380 165 320 170 L160 170 Q100 165 80 100 Z" fill="rgba(200,1,26,0.06)" stroke="#C8011A" stroke-width="2.5"/><rect x="188" y="140" width="104" height="22" rx="4" fill="rgba(200,1,26,0.1)" stroke="rgba(200,1,26,0.5)" stroke-width="1.5"/><circle cx="140" cy="158" r="6" fill="#ddd" stroke="#C8011A" stroke-width="1.5"/><circle cx="340" cy="158" r="6" fill="#ddd" stroke="#C8011A" stroke-width="1.5"/><text x="240" y="196" text-anchor="middle" font-family="Arial Black" font-size="11" fill="#C8011A" letter-spacing="4" font-weight="900">TAIL PANEL</text></svg>`,
+'Leg Guard':`<svg viewBox="0 0 480 200"><rect width="480" height="200" fill="#EEE9E0"/><path d="M130 30 Q240 20 350 30 L375 80 Q370 135 340 155 Q290 175 240 178 Q190 175 140 155 Q110 135 105 80 Z" fill="rgba(200,1,26,0.06)" stroke="#C8011A" stroke-width="2.5"/><rect x="175" y="90" width="130" height="6" rx="3" fill="rgba(0,0,0,0.07)"/><rect x="175" y="103" width="130" height="6" rx="3" fill="rgba(0,0,0,0.07)"/><rect x="175" y="116" width="130" height="6" rx="3" fill="rgba(0,0,0,0.07)"/><text x="240" y="197" text-anchor="middle" font-family="Arial Black" font-size="11" fill="#C8011A" letter-spacing="4" font-weight="900">LEG GUARD</text></svg>`,
+'Doom':`<svg viewBox="0 0 480 200"><rect width="480" height="200" fill="#EEE9E0"/><path d="M140 150 L140 100 Q140 45 240 42 Q340 45 340 100 L340 150 Z" fill="rgba(200,1,26,0.06)" stroke="#C8011A" stroke-width="2.5"/><ellipse cx="240" cy="90" rx="35" ry="22" fill="rgba(200,1,26,0.1)" stroke="rgba(200,1,26,0.4)" stroke-width="1.5"/><text x="240" y="95" text-anchor="middle" font-family="Arial Black" font-size="10" fill="#C8011A" font-weight="900">NAMO</text><line x1="140" y1="150" x2="340" y2="150" stroke="#C8011A" stroke-width="2"/><text x="240" y="190" text-anchor="middle" font-family="Arial Black" font-size="11" fill="#C8011A" letter-spacing="4" font-weight="900">DOOM</text></svg>`,
+'Fuel Tank':`<svg viewBox="0 0 480 200"><rect width="480" height="200" fill="#EEE9E0"/><path d="M100 90 Q100 50 180 45 L300 45 Q360 45 370 75 L380 115 Q380 160 320 165 L160 165 Q100 160 100 120 Z" fill="rgba(200,1,26,0.07)" stroke="#C8011A" stroke-width="2.5"/><ellipse cx="240" cy="48" rx="28" ry="10" fill="#ccc" stroke="#C8011A" stroke-width="2"/><ellipse cx="240" cy="45" rx="18" ry="7" fill="#bbb" stroke="rgba(200,1,26,0.5)" stroke-width="1.5"/><text x="240" y="190" text-anchor="middle" font-family="Arial Black" font-size="11" fill="#C8011A" letter-spacing="4" font-weight="900">FUEL TANK</text></svg>`,
+'Side Box':`<svg viewBox="0 0 480 200"><rect width="480" height="200" fill="#EEE9E0"/><rect x="110" y="45" width="260" height="130" rx="12" fill="rgba(200,1,26,0.06)" stroke="#C8011A" stroke-width="2.5"/><line x1="118" y1="90" x2="362" y2="90" stroke="rgba(0,0,0,0.1)" stroke-width="2"/><rect x="224" y="148" width="32" height="16" rx="4" fill="#ddd" stroke="#C8011A" stroke-width="1.5"/><circle cx="240" cy="156" r="4" fill="#C8011A"/><text x="240" y="196" text-anchor="middle" font-family="Arial Black" font-size="11" fill="#C8011A" letter-spacing="4" font-weight="900">SIDE BOX</text></svg>`,
+'Indicator':`<svg viewBox="0 0 480 200"><rect width="480" height="200" fill="#FFF8E7"/><path d="M170 70 Q190 50 240 50 Q290 50 310 70 L320 130 Q310 155 240 158 Q170 155 160 130 Z" fill="rgba(255,140,0,0.12)" stroke="#E67E00" stroke-width="2.5"/><ellipse cx="240" cy="108" rx="32" ry="26" fill="rgba(255,190,0,0.3)"/><ellipse cx="240" cy="108" rx="18" ry="14" fill="rgba(255,200,0,0.5)"/><ellipse cx="240" cy="108" rx="8" ry="6" fill="rgba(255,220,0,0.8)"/><text x="240" y="192" text-anchor="middle" font-family="Arial Black" font-size="11" fill="#B8900E" letter-spacing="3" font-weight="900">INDICATOR</text></svg>`,
+'Head Light':`<svg viewBox="0 0 480 200"><rect width="480" height="200" fill="#EEF4FF"/><path d="M110 65 Q120 42 240 40 Q360 42 370 65 L375 130 Q365 168 240 170 Q115 168 105 130 Z" fill="rgba(100,160,255,0.08)" stroke="#4A90E2" stroke-width="2.5"/><ellipse cx="240" cy="106" rx="55" ry="45" fill="rgba(180,210,255,0.2)" stroke="rgba(74,144,226,0.4)" stroke-width="1.5"/><path d="M150 145 Q185 140 240 140 Q295 140 330 145" fill="none" stroke="rgba(74,144,226,0.7)" stroke-width="4" stroke-linecap="round"/><text x="240" y="192" text-anchor="middle" font-family="Arial Black" font-size="11" fill="#4A90E2" letter-spacing="3" font-weight="900">HEAD LIGHT</text></svg>`,
+'Tail Light':`<svg viewBox="0 0 480 200"><rect width="480" height="200" fill="#FFF0F2"/><path d="M120 60 Q130 40 240 38 Q350 40 360 60 L368 135 Q358 168 240 170 Q122 168 112 135 Z" fill="rgba(200,1,26,0.08)" stroke="#C8011A" stroke-width="2.5"/><g fill="rgba(220,50,50,0.5)"><rect x="172" y="82" width="18" height="18" rx="3"/><rect x="198" y="82" width="18" height="18" rx="3"/><rect x="224" y="82" width="18" height="18" rx="3"/><rect x="250" y="82" width="18" height="18" rx="3"/><rect x="276" y="82" width="18" height="18" rx="3"/><rect x="172" y="106" width="18" height="18" rx="3"/><rect x="198" y="106" width="18" height="18" rx="3"/><rect x="224" y="106" width="18" height="18" rx="3"/><rect x="250" y="106" width="18" height="18" rx="3"/><rect x="276" y="106" width="18" height="18" rx="3"/></g><text x="240" y="192" text-anchor="middle" font-family="Arial Black" font-size="11" fill="#C8011A" letter-spacing="3" font-weight="900">TAIL LIGHT</text></svg>`,
+'Control Cables':`<svg viewBox="0 0 480 200"><rect width="480" height="200" fill="#EEE9E0"/><path d="M50 100 Q150 40 240 98 Q330 158 430 100" fill="none" stroke="#999" stroke-width="10" stroke-linecap="round"/><path d="M50 100 Q150 40 240 98 Q330 158 430 100" fill="none" stroke="#C8011A" stroke-width="3" stroke-linecap="round" stroke-dasharray="8 6"/><rect x="32" y="88" width="24" height="24" rx="5" fill="#ccc" stroke="#C8011A" stroke-width="2"/><circle cx="44" cy="100" r="6" fill="rgba(184,144,14,0.8)"/><rect x="424" y="88" width="24" height="24" rx="5" fill="#ccc" stroke="#C8011A" stroke-width="2"/><circle cx="436" cy="100" r="6" fill="rgba(184,144,14,0.8)"/><text x="240" y="170" text-anchor="middle" font-family="Arial Black" font-size="11" fill="#C8011A" letter-spacing="1" font-weight="900">CONTROL CABLES</text></svg>`,
+'Brake Shoe':`<svg viewBox="0 0 480 200"><rect width="480" height="200" fill="#EEE9E0"/><path d="M158 165 A90 90 0 1 1 322 165" fill="rgba(200,1,26,0.08)" stroke="#C8011A" stroke-width="3"/><path d="M168 158 A80 80 0 1 1 312 158" fill="rgba(100,100,100,0.2)" stroke="rgba(80,80,80,0.4)" stroke-width="6" stroke-linecap="round"/><line x1="158" y1="165" x2="240" y2="100" stroke="#C8011A" stroke-width="2.5"/><line x1="322" y1="165" x2="240" y2="100" stroke="#C8011A" stroke-width="2.5"/><circle cx="240" cy="100" r="12" fill="#ddd" stroke="#C8011A" stroke-width="2"/><circle cx="240" cy="100" r="5" fill="#C8011A"/><text x="240" y="196" text-anchor="middle" font-family="Arial Black" font-size="11" fill="#C8011A" letter-spacing="3" font-weight="900">BRAKE SHOE</text></svg>`,
+'Side Stand':`<svg viewBox="0 0 480 200"><rect width="480" height="200" fill="#EEE9E0"/><line x1="60" y1="170" x2="420" y2="170" stroke="rgba(0,0,0,0.12)" stroke-width="1.5" stroke-dasharray="8 6"/><line x1="240" y1="40" x2="175" y2="165" stroke="#aaa" stroke-width="12" stroke-linecap="round"/><line x1="240" y1="40" x2="175" y2="165" stroke="#C8011A" stroke-width="4" stroke-linecap="round"/><path d="M148 162 L202 162 L208 172 L142 172 Z" fill="#bbb" stroke="#C8011A" stroke-width="2"/><circle cx="240" cy="40" r="14" fill="#ddd" stroke="#C8011A" stroke-width="2.5"/><circle cx="240" cy="40" r="6" fill="#C8011A"/><text x="240" y="192" text-anchor="middle" font-family="Arial Black" font-size="11" fill="#C8011A" letter-spacing="3" font-weight="900">SIDE STAND</text></svg>`,
+'Main Stand':`<svg viewBox="0 0 480 200"><rect width="480" height="200" fill="#EEE9E0"/><line x1="60" y1="170" x2="420" y2="170" stroke="rgba(0,0,0,0.12)" stroke-width="1.5" stroke-dasharray="8 6"/><rect x="195" y="50" width="90" height="16" rx="6" fill="#ccc" stroke="#C8011A" stroke-width="2"/><line x1="210" y1="58" x2="155" y2="162" stroke="#aaa" stroke-width="11" stroke-linecap="round"/><line x1="210" y1="58" x2="155" y2="162" stroke="#C8011A" stroke-width="3.5" stroke-linecap="round"/><line x1="270" y1="58" x2="325" y2="162" stroke="#aaa" stroke-width="11" stroke-linecap="round"/><line x1="270" y1="58" x2="325" y2="162" stroke="#C8011A" stroke-width="3.5" stroke-linecap="round"/><line x1="165" y1="120" x2="315" y2="120" stroke="#999" stroke-width="7" stroke-linecap="round"/><path d="M130 160 L180 160 L185 170 L125 170 Z" fill="#bbb" stroke="#C8011A" stroke-width="1.5"/><path d="M295 160 L345 160 L350 170 L290 170 Z" fill="#bbb" stroke="#C8011A" stroke-width="1.5"/><text x="240" y="192" text-anchor="middle" font-family="Arial Black" font-size="11" fill="#C8011A" letter-spacing="3" font-weight="900">MAIN STAND</text></svg>`,
+'Footrest':`<svg viewBox="0 0 480 200"><rect width="480" height="200" fill="#EEE9E0"/><rect x="140" y="82" width="200" height="36" rx="18" fill="#ddd" stroke="#C8011A" stroke-width="2.5"/><g stroke="#bbb" stroke-width="8" stroke-linecap="round"><line x1="180" y1="85" x2="180" y2="115"/><line x1="200" y1="85" x2="200" y2="115"/><line x1="220" y1="85" x2="220" y2="115"/><line x1="240" y1="85" x2="240" y2="115"/><line x1="260" y1="85" x2="260" y2="115"/><line x1="280" y1="85" x2="280" y2="115"/><line x1="300" y1="85" x2="300" y2="115"/></g><ellipse cx="140" cy="100" rx="18" ry="18" fill="#ccc" stroke="#C8011A" stroke-width="2"/><ellipse cx="340" cy="100" rx="18" ry="18" fill="#ccc" stroke="#C8011A" stroke-width="2"/><text x="240" y="160" text-anchor="middle" font-family="Arial Black" font-size="11" fill="#C8011A" letter-spacing="3" font-weight="900">FOOTREST</text></svg>`,
+'Filter':`<svg viewBox="0 0 480 200"><rect width="480" height="200" fill="#EEE9E0"/><rect x="155" y="35" width="170" height="135" rx="14" fill="rgba(200,1,26,0.06)" stroke="#C8011A" stroke-width="2.5"/><g stroke="rgba(0,0,0,0.1)" stroke-width="1.2" fill="none"><line x1="178" y1="55" x2="178" y2="155"/><line x1="196" y1="55" x2="196" y2="155"/><line x1="214" y1="55" x2="214" y2="155"/><line x1="232" y1="55" x2="232" y2="155"/><line x1="250" y1="55" x2="250" y2="155"/><line x1="268" y1="55" x2="268" y2="155"/><line x1="286" y1="55" x2="286" y2="155"/><line x1="304" y1="55" x2="304" y2="155"/></g><rect x="155" y="35" width="170" height="22" rx="14" fill="#ccc" stroke="#C8011A" stroke-width="2"/><ellipse cx="240" cy="35" rx="55" ry="12" fill="#bbb" stroke="#C8011A" stroke-width="2"/><rect x="155" y="148" width="170" height="22" rx="14" fill="#ccc" stroke="#C8011A" stroke-width="2"/><text x="240" y="195" text-anchor="middle" font-family="Arial Black" font-size="11" fill="#C8011A" letter-spacing="4" font-weight="900">FILTER</text></svg>`,
+'Meter Case':`<svg viewBox="0 0 480 200"><rect width="480" height="200" fill="#EEF4FF"/><path d="M100 55 Q120 35 240 33 Q360 35 380 55 L385 140 Q370 170 240 172 Q110 170 95 140 Z" fill="rgba(74,144,226,0.08)" stroke="#4A90E2" stroke-width="2.5"/><circle cx="185" cy="103" r="45" fill="#fff" stroke="rgba(74,144,226,0.4)" stroke-width="1.5"/><text x="185" y="108" text-anchor="middle" font-family="Arial" font-size="8" fill="rgba(74,144,226,0.7)">km/h</text><text x="185" y="120" text-anchor="middle" font-family="Arial Black" font-size="14" fill="#4A90E2" font-weight="900">60</text><line x1="185" y1="103" x2="207" y2="76" stroke="#C8011A" stroke-width="2" stroke-linecap="round"/><circle cx="185" cy="103" r="4" fill="#C8011A"/><circle cx="305" cy="103" r="42" fill="#fff" stroke="rgba(200,1,26,0.35)" stroke-width="1.5"/><text x="305" y="108" text-anchor="middle" font-family="Arial" font-size="8" fill="rgba(200,1,26,0.6)">rpm×100</text><text x="305" y="120" text-anchor="middle" font-family="Arial Black" font-size="14" fill="#C8011A" font-weight="900">30</text><line x1="305" y1="103" x2="326" y2="77" stroke="#C8011A" stroke-width="2" stroke-linecap="round"/><circle cx="305" cy="103" r="4" fill="#C8011A"/><text x="240" y="192" text-anchor="middle" font-family="Arial Black" font-size="11" fill="#4A90E2" letter-spacing="3" font-weight="900">METER CASE</text></svg>`,
+'Seat Cover':`<svg viewBox="0 0 480 200"><rect width="480" height="200" fill="#EEE9E0"/><path d="M70 130 Q80 85 180 75 Q280 70 350 78 Q410 88 415 115 Q420 145 390 158 Q320 172 240 172 Q160 172 100 158 Q65 148 70 130 Z" fill="rgba(200,1,26,0.06)" stroke="#C8011A" stroke-width="2.5"/><g stroke="rgba(0,0,0,0.07)" stroke-width="1" fill="none"><line x1="160" y1="85" x2="180" y2="155"/><line x1="200" y1="82" x2="218" y2="156"/><line x1="240" y1="81" x2="255" y2="156"/><line x1="278" y1="82" x2="292" y2="155"/><line x1="120" y1="108" x2="370" y2="104"/><line x1="110" y1="124" x2="378" y2="120"/><line x1="106" y1="138" x2="380" y2="135"/></g><text x="240" y="194" text-anchor="middle" font-family="Arial Black" font-size="11" fill="#C8011A" letter-spacing="3" font-weight="900">SEAT COVER</text></svg>`,
+'Paint Spray':`<svg viewBox="0 0 480 200"><rect width="480" height="200" fill="#EEE9E0"/><ellipse cx="130" cy="100" rx="95" ry="65" fill="rgba(200,1,26,0.07)"/><g fill="rgba(200,1,26,0.35)"><circle cx="65" cy="75" r="3.5"/><circle cx="48" cy="95" r="2.5"/><circle cx="55" cy="118" r="3"/><circle cx="72" cy="130" r="2"/><circle cx="38" cy="85" r="2"/><circle cx="42" cy="110" r="3"/></g><rect x="260" y="28" width="72" height="155" rx="18" fill="#C8011A"/><rect x="260" y="68" width="72" height="80" fill="rgba(255,255,255,0.95)"/><text x="296" y="95" text-anchor="middle" font-family="Arial Black" font-size="8" fill="#C8011A" font-weight="900">NAMO</text><text x="296" y="107" text-anchor="middle" font-family="Arial Black" font-size="7" fill="#C8011A" font-weight="900">GOLD</text><text x="296" y="127" text-anchor="middle" font-family="Arial" font-size="7" fill="#333">AUTO PAINT</text><ellipse cx="296" cy="28" rx="30" ry="10" fill="#999" stroke="#bbb" stroke-width="1"/><rect x="284" y="14" width="24" height="16" rx="5" fill="#888"/><rect x="290" y="10" width="12" height="8" rx="3" fill="#C8011A"/><text x="240" y="197" text-anchor="middle" font-family="Arial Black" font-size="11" fill="#C8011A" letter-spacing="3" font-weight="900">PAINT SPRAY</text></svg>`
+};
+
+function buildProds(){
+  document.getElementById('pgrid').innerHTML=PRODS.map(p=>`
+    <div class="pcard" data-cat="${p.cat}">
+      <div class="pimg">${SVGS[p.n]||''}<div class="pbadge">${p.b}</div></div>
+      <div class="pbody">
+        <div class="pcat">${p.cl}</div>
+        <div class="pname">${p.n}</div>
+        <p class="pdesc">${p.d}</p>
+        <div class="pspecs">${p.s.map(x=>`<span class="pspec">${x}</span>`).join('')}</div>
+        <div class="pfoot"><a class="penq" onclick="goEnq('${p.n}')">▶ Enquire</a><span class="pbr">NAMO Gold</span></div>
+      </div>
+    </div>`).join('');
+}
+function buildTicker(){
+  const names=PRODS.map(p=>p.n);
+  document.getElementById('ttk').innerHTML=[...names,...names].map(n=>`<span class="ti">${n} <span class="ts">◆</span></span>`).join('');
+}
+
+const PGS=['home','about','products','enquiry','contact'];
+function goto(id){
+  PGS.forEach(p=>{
+    document.getElementById('page-'+p).classList.toggle('active',p===id);
+    const n=document.getElementById('nl-'+p);
+    if(n) n.classList.toggle('act',p===id);
+  });
+  window.scrollTo({top:0,behavior:'smooth'});
+  location.hash='#'+id;
+  setTimeout(()=>{ document.querySelectorAll('#page-'+id+' .fi:not(.vis)').forEach(el=>obs.observe(el)); },60);
+}
+function closeMob(){ document.getElementById('mmenu').classList.remove('open'); }
+function toggleMob(){ document.getElementById('mmenu').classList.toggle('open'); }
+
+function fcat(cat,btn){
+  document.querySelectorAll('.ctab').forEach(t=>t.classList.remove('active'));
+  if(btn){ btn.classList.add('active'); }
+  else{
+    const tabs=[...document.querySelectorAll('.ctab')];
+    const t=cat==='all'?tabs[0]:tabs.find(t=>t.textContent.toLowerCase().includes(cat));
+    if(t) t.classList.add('active');
+  }
+  document.querySelectorAll('.pcard').forEach(c=>c.classList.toggle('hidden',cat!=='all'&&c.dataset.cat!==cat));
+}
+function goEnq(name){
+  goto('enquiry');
+  setTimeout(()=>{
+    const s=document.getElementById('fpr');
+    for(let i=0;i<s.options.length;i++) if(s.options[i].text===name){ s.selectedIndex=i; break; }
+  },120);
+}
+function submitWA(){
+  const name=document.getElementById('fn').value.trim();
+  const phone=document.getElementById('fp').value.trim();
+  const prod=document.getElementById('fpr').value;
+  const qty=document.getElementById('fq').value.trim();
+  const msg=document.getElementById('fm').value.trim();
+  if(!name||!phone||!prod||!qty){
+    const t=document.getElementById('toast');
+    t.textContent='Please fill Name, Phone, Product and Quantity.';
+    t.className='err';t.style.display='block';
+    clearTimeout(t._t);t._t=setTimeout(()=>t.style.display='none',3500);
+    return;
+  }
+  const txt=`*New Enquiry — S.K. Traders*\n\n*Name:* ${name}\n*Phone:* ${phone}\n*Product:* ${prod}\n*Quantity:* ${qty}\n*Notes:* ${msg||'—'}\n\n_Sent from NAMO Gold website_`;
+  window.open(`https://wa.me/${WA}?text=${encodeURIComponent(txt)}`,'_blank');
+  ['fn','fp','fq','fm'].forEach(id=>document.getElementById(id).value='');
+  document.getElementById('fpr').selectedIndex=0;
+}
+
+function toggleTheme(){
+  const dark=document.documentElement.getAttribute('data-theme')==='dark';
+  const next=dark?'light':'dark';
+  document.documentElement.setAttribute('data-theme',next);
+  document.getElementById('tbtn').textContent=next==='dark'?'☀️':'🌙';
+  try{localStorage.setItem('sk-theme',next);}catch(e){}
+}
+function initTheme(){
+  let s; try{s=localStorage.getItem('sk-theme');}catch(e){}
+  const sys=window.matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light';
+  if((s||sys)==='dark'){
+    document.documentElement.setAttribute('data-theme','dark');
+    const b=document.getElementById('tbtn');
+    if(b) b.textContent='☀️';
+  }
+}
+
+const obs=new IntersectionObserver(e=>{
+  e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('vis');obs.unobserve(x.target);}});
+},{threshold:0.05});
+function initFi(){document.querySelectorAll('.fi').forEach(el=>obs.observe(el));}
+
+document.addEventListener('DOMContentLoaded',()=>{
+  initTheme();buildProds();buildTicker();initFi();
+  const h=location.hash.replace('#','');
+  goto(PGS.includes(h)?h:'home');
+});
+</script>
+</body>
+</html>
